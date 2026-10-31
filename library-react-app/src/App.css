@@ -1,0 +1,411 @@
+
+/* ========================================
+   1. COLORS AND FONTS
+   ======================================== */
+
+:root {
+    /* FONT CUSTOMIZATION: Change the font families here. */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lato', Arial, sans-serif;
+
+    /* Bookshelf-inspired color palette */
+    --color-walnut: #4B3025;
+    --color-wood: #76513C;
+    --color-tan: #A77B55;
+    --color-parchment: #E9DDC9;
+    --color-cream: #F8F4EC;
+    --color-text: #35251D;
+    --color-muted: #887665;
+    --color-border: #DFD1BE;
+    --color-white: #FFFFFF;
+}
+
+/* ========================================
+   2. GENERAL STYLES
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-walnut);
+}
+
+a {
+    text-decoration: none;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+/* ========================================
+   3. BOOTSTRAP CUSTOMIZATION
+   ======================================== */
+
+.btn-primary {
+    background-color: var(--color-wood);
+    border-color: var(--color-wood);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-walnut);
+    border-color: var(--color-walnut);
+}
+
+.card {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+}
+
+.form-control,
+.form-select {
+    border-color: var(--color-border);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-tan);
+    box-shadow: 0 0 0 0.2rem rgba(167, 123, 85, 0.15);
+}
+
+.table {
+    color: var(--color-text);
+}
+
+.text-wood {
+    color: var(--color-wood);
+}
+
+.bg-parchment {
+    background-color: var(--color-parchment);
+}
+
+.bg-cream {
+    background-color: var(--color-cream);
+}
+
+/* ========================================
+   4. MAIN APP LAYOUT
+   ======================================== */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    min-height: 100vh;
+    background-color: var(--color-walnut);
+    color: var(--color-cream);
+    display: flex;
+    flex-direction: column;
+    padding: 28px 18px;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 8px 35px;
+}
+
+.brand-icon {
+    font-size: 35px;
+    color: var(--color-parchment);
+}
+
+.sidebar-brand h4 {
+    color: var(--color-cream);
+    font-size: 19px;
+    margin: 0;
+}
+
+.sidebar-brand small {
+    color: var(--color-parchment);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-section-label {
+    color: #C6A98E;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 10px 12px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 14px;
+    border-radius: 8px;
+    color: var(--color-parchment);
+    transition: 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background-color: var(--color-wood);
+    color: var(--color-white);
+}
+
+.sidebar-link.active {
+    background-color: var(--color-tan);
+    color: var(--color-white);
+}
+
+.sidebar-link i {
+    font-size: 18px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 18px 10px 5px;
+    color: var(--color-parchment);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* ========================================
+   5. TOP NAVBAR AND PAGE CONTENT
+   ======================================== */
+
+.main-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.top-navbar {
+    height: 76px;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-subtitle {
+    color: var(--color-muted);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-wood);
+    font-size: 13px;
+}
+
+.navbar-avatar {
+    width: 37px;
+    height: 37px;
+    background-color: var(--color-parchment);
+    color: var(--color-walnut);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.page-content {
+    padding: 35px;
+}
+
+.page-description {
+    color: var(--color-muted);
+    margin-bottom: 28px;
+}
+
+/* ========================================
+   6. DASHBOARD WELCOME CARD
+   ======================================== */
+
+.welcome-card {
+    background-color: var(--color-parchment);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 35px;
+    max-width: 700px;
+}
+
+.welcome-card > i {
+    font-size: 35px;
+    color: var(--color-wood);
+}
+
+.welcome-card h3 {
+    margin-top: 15px;
+}
+
+.welcome-card p {
+    color: var(--color-muted);
+    margin-bottom: 0;
+}
+
+/* ========================================
+   7. RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 75px;
+        min-width: 75px;
+        padding: 20px 10px;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+        padding: 5px 0 30px;
+    }
+
+    .sidebar-brand > div,
+    .sidebar-section-label,
+    .sidebar-link span,
+    .sidebar-footer span {
+        display: none;
+    }
+
+    .sidebar-link {
+        justify-content: center;
+        padding: 13px 5px;
+    }
+
+    .sidebar-link i {
+        font-size: 21px;
+    }
+
+    .sidebar-footer {
+        justify-content: center;
+    }
+
+    .top-navbar {
+        padding: 0 15px;
+    }
+
+    .page-content {
+        padding: 22px 16px;
+    }
+
+    .navbar-date span {
+        display: none;
+    }
+}
+
+.stat-icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    border-radius: 12px;
+    background-color: var(--color-parchment);
+    color: var(--color-wood);
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+}
+
+/* Keep disabled primary buttons consistent with the theme */
+.btn-primary:disabled {
+    background-color: var(--color-wood);
+    border-color: var(--color-wood);
+    color: var(--color-white);
+    opacity: 1;
+}
+
+.book-title-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--color-wood);
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+
+.book-title-link:hover {
+    color: var(--color-tan);
+    text-decoration: underline;
+}
+
+/* Category Components */
+
+.category-card {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(75, 48, 37, 0.12) !important;
+}
+
+.category-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background-color: var(--color-parchment);
+    color: var(--color-wood);
+    font-size: 21px;
+}
+
+.empty-icon {
+    font-size: 48px;
+    color: var(--color-tan);
+}
+
+/* Notes Components */
+
+.note-card {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(75, 48, 37, 0.12) !important;
+}
+
+.note-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background-color: var(--color-parchment);
+    color: var(--color-wood);
+    font-size: 21px;
+}
